@@ -1,7 +1,16 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
+    // Enqueue parent theme style
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+
+    // Enqueue child theme style
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/sass/style.css');
+
+    wp_enqueue_script('swiper', get_stylesheet_directory_uri() . '/node_modules/swiper/swiper.min.js');
+    wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/assets/scripts.js');
+
+
 }
 
 // Get customizer options form parent theme
