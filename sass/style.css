@@ -1,4 +1,54 @@
 @charset "UTF-8";
+:root {
+  --rotateTime: 20s;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#event {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+#event::before {
+  content: url("../../foce/assets/images/Sunflower.png");
+  position: absolute;
+  left: 4.8em;
+}
+#event::after {
+  content: url("../../foce/assets/images/orchid.png");
+  position: absolute;
+  right: -4em;
+}
+
+.oscars {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.oscars h3 {
+  background-image: url("../assets/images/orange_oscars_bg.png");
+  margin-top: 2em;
+  padding: 2em;
+  text-align: left;
+}
+
+#event::before,
+#event::after {
+  animation: rotating var(--rotateTime) linear infinite;
+}
+
+.site-footer::before,
+.site-footer::after {
+  display: none;
+}
+
 .banner {
   position: relative;
   width: 100%;

@@ -1,0 +1,16 @@
+:root{
+    --rotateTime: 20s;
+}
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@mixin rotate_infinite($rotate_Time) {
+    animation: rotating $rotate_Time linear infinite;
+}

@@ -1,0 +1,39 @@
+#event{
+    display: flex;
+    overflow: hidden; 
+    position: relative;
+    &::before{
+        content: url("../../foce/assets/images/Sunflower.png");
+        position: absolute;
+        left: 4.8em;
+    }    
+    &::after{
+        content: url("../../foce/assets/images/orchid.png");
+        position: absolute;
+        right: -4em;
+    }
+}
+
+
+.oscars{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    & h3{
+        background-image: url("../assets/images/orange_oscars_bg.png");
+        margin-top: 2em;
+        padding: 2em;
+        text-align: left;   
+    } 
+}
+
+#event::before,
+#event::after {
+    @include rotate_infinite (var(--rotateTime)) ;
+}
+
+// fleurs du footer invisibles
+.site-footer::before,
+.site-footer::after {
+    display: none;
+}
