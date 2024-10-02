@@ -1,3 +1,29 @@
+@charset "UTF-8";
+.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden; /* S'assure que le contenu ne déborde pas */
+}
+.banner img {
+  height: auto;
+  object-fit: cover;
+  display: block;
+  z-index: 2;
+  position: absolute;
+}
 
+.video-background {
+  height: auto;
+  object-fit: cover; /* Remplit la section sans distorsion de la vidéo */
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .video-background {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
