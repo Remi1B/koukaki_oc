@@ -87,3 +87,22 @@
 .site-footer ul::after {
     @include rotate_infinite (var(--rotateTime)) ;
 }
+
+#place {
+    background-image: url(../assets/images/Studio_Koukaki-image_place.png) !important;
+    & div {
+        justify-content: end !important;
+    }
+}
+.big_cloud{
+    position: relative;
+    left: 165%;
+    bottom: 65%;
+    filter: blur(11px);
+}
+.little_cloud {
+    position: relative;
+    bottom: 55%;
+    left: 125%;
+    filter: blur(6px);
+}

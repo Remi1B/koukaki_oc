@@ -141,4 +141,25 @@
   animation: rotating var(--rotateTime) linear infinite;
 }
 
+#place {
+  background-image: url(../assets/images/Studio_Koukaki-image_place.png) !important;
+}
+#place div {
+  justify-content: end !important;
+}
+
+.big_cloud {
+  position: relative;
+  left: 165%;
+  bottom: 65%;
+  filter: blur(11px);
+}
+
+.little_cloud {
+  position: relative;
+  bottom: 55%;
+  left: 125%;
+  filter: blur(6px);
+}
+
 /*# sourceMappingURL=style.css.map */
