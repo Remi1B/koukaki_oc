@@ -1,16 +1,20 @@
 <?php
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
-    // Enqueue parent theme style
+
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 
-    // Enqueue child theme style
     wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/sass/style.css');
 
-    wp_enqueue_script('swiper', get_stylesheet_directory_uri() . '/node_modules/swiper/swiper.min.js');
-    wp_enqueue_script('scripts', get_stylesheet_directory_uri() . '/assets/scripts.js');
+    wp_enqueue_style('swiper-css', get_stylesheet_directory_uri() . '/node_modules/swiper/swiper-bundle.min.css');
+    wp_enqueue_script('swiper-js', get_stylesheet_directory_uri() . '/node_modules/swiper/swiper-bundle.min.js', array(), null, true);
 
-
+    wp_enqueue_script('navBurger', get_stylesheet_directory_uri() . '/js/navBurger.js', array(), null, true);
+    wp_enqueue_script('parallaxeLogo', get_stylesheet_directory_uri() . '/js/parallaxeLogo.js', array(), null, true);
+    wp_enqueue_script('fadeInSection', get_stylesheet_directory_uri() . '/js/fadeInSection.js', array(), null, true);
+    wp_enqueue_script('fadeInTitle', get_stylesheet_directory_uri() . '/js/fadeInTitle.js', array(), null, true);
+    wp_enqueue_script('parallaxeCloud', get_stylesheet_directory_uri() . '/js/parallaxeCloud.js', array(), null, true);
+    wp_enqueue_script('swiperCarrousel', get_stylesheet_directory_uri() . '/js/swiperCarrousel.js', array('swiper-js'), null, true);
 }
 
 // Get customizer options form parent theme

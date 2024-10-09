@@ -1,0 +1,60 @@
+:root{
+    --rotateTime: 20s;
+}
+$translateY: 100px;
+$flowers: "orchid", "sunflower", "randomFlower", "hibiscus", "flower";
+$primaryColor: #FFD5A2;
+$cloud-blur-big: 11px;
+$cloud-blur-little: 6px;
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@mixin rotate_infinite($rotate_Time) {
+    animation: rotating $rotate_Time linear infinite;
+}
+
+@mixin fade-in($translateY) {
+    opacity: 0;
+    transform: translateY($translateY);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+
+    &.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating{
+    0% {
+        transform:translate(0, 0);
+      }
+      20% {
+        transform:translate(30px, -10px);
+      }
+      40% {
+        transform:translate(20px, -30px);
+      }
+      60% {
+        transform:translate(-20px, -20px);
+      }
+      80% {
+        transform:translate(-30px, 10px);
+      }
+      100% {
+        transform:translate(0, 0);
+      }
+    }
+
+    @mixin cloud($position: relative, $left: 0%, $bottom: 0%, $blur: 0px) {
+        position: $position;
+        left: $left;
+        bottom: $bottom;
+        filter: blur($blur);
+    }

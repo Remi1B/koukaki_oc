@@ -10,6 +10,26 @@
     transform: rotate(360deg);
   }
 }
+@keyframes floating {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(30px, -10px);
+  }
+  40% {
+    transform: translate(20px, -30px);
+  }
+  60% {
+    transform: translate(-20px, -20px);
+  }
+  80% {
+    transform: translate(-30px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 #event {
   display: flex;
   overflow: hidden;
@@ -48,6 +68,10 @@
   display: none;
 }
 
+.site-header {
+  background-color: #FFD5A2;
+}
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(100px);
@@ -68,10 +92,10 @@
 }
 
 .fade-in-title {
-  display: block;
   opacity: 0;
   transform: translateY(100px);
   transition: opacity 1s ease-out, transform 1s ease-out;
+  display: block;
 }
 .fade-in-title.visible {
   opacity: 1;
@@ -94,26 +118,6 @@
   position: absolute;
 }
 
-@keyframes floating {
-  0% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(30px, -10px);
-  }
-  40% {
-    transform: translate(20px, -30px);
-  }
-  60% {
-    transform: translate(-20px, -20px);
-  }
-  80% {
-    transform: translate(-30px, 10px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 .floating {
   animation: floating 8s ease-in-out 0s infinite;
 }
@@ -141,6 +145,26 @@
   animation: rotating var(--rotateTime) linear infinite;
 }
 
+.orchid {
+  animation: rotating var(--rotateTime) linear infinite;
+}
+
+.sunflower {
+  animation: rotating var(--rotateTime) linear infinite;
+}
+
+.randomFlower {
+  animation: rotating var(--rotateTime) linear infinite;
+}
+
+.hibiscus {
+  animation: rotating var(--rotateTime) linear infinite;
+}
+
+.flower {
+  animation: rotating var(--rotateTime) linear infinite;
+}
+
 #place {
   background-image: url(../assets/images/Studio_Koukaki-image_place.png) !important;
 }
@@ -157,9 +181,159 @@
 
 .little_cloud {
   position: relative;
-  bottom: 55%;
   left: 125%;
+  bottom: 55%;
   filter: blur(6px);
+}
+
+#characters {
+  flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
+}
+#characters div {
+  flex: none !important;
+}
+#characters h3 {
+  text-align: left;
+  background-position: 1em;
+}
+
+.swiper {
+  max-width: 85%;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+.site-title {
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 21.5px;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+.burger-menu div {
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu {
+  position: relative;
+  left: 0;
+  width: auto;
+  height: 0;
+  overflow: hidden;
+  background-color: #FFF5E9;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: height 0.3s ease;
+}
+.dropdown-menu nav ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+.dropdown-menu nav ul li {
+  margin: 10px 0;
+}
+.dropdown-menu nav ul p {
+  font-size: 1rem;
+  padding-top: 7rem;
+}
+
+.dropdown-menu nav ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 64px;
+}
+.dropdown-menu nav ul li a:hover {
+  text-shadow: 0px 0px 14px #FF5C00;
+}
+
+.burger-active .line1 {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+.burger-active .line2 {
+  opacity: 0;
+}
+.burger-active .line3 {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.menu-open {
+  height: 100vw;
+  overflow: hidden;
+}
+
+.logo_menu {
+  height: 100px;
+}
+
+.catsMenu .Kawaneko {
+  position: absolute;
+  top: 7%;
+  left: 23%;
+}
+.catsMenu .Jaakuna {
+  position: absolute;
+  top: 22%;
+  right: 15%;
+}
+.catsMenu .Orenjiiro {
+  position: absolute;
+  top: 33%;
+  left: 5%;
+}
+
+.flowersMenu .orchid {
+  position: absolute;
+  top: 2%;
+  left: -4%;
+  width: 10em;
+}
+.flowersMenu .sunflower {
+  position: absolute;
+  top: 3%;
+  right: 20%;
+}
+.flowersMenu .randomFlower {
+  position: absolute;
+  right: -3%;
+  top: 16%;
+  width: 6em;
+}
+.flowersMenu .flower {
+  position: absolute;
+  top: 23%;
+  left: 16%;
+  width: 5em;
+}
+.flowersMenu .hibiscus {
+  position: absolute;
+  right: -22%;
+  top: 27%;
+}
+
+body.no-scroll {
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=style.css.map */

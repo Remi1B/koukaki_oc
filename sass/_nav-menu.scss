@@ -1,0 +1,132 @@
+//Burger menu
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin: 0;
+}
+.site-title {
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    font-family: "Quicksand", sans-serif;
+    font-size: 21.5px;
+}
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    & div {
+        width: 100%;
+        height: 4px;
+        background-color: black;
+        transition: all 0.3s ease;
+    }
+}
+.dropdown-menu {
+    position: relative;
+    left: 0;
+    width: auto;
+    height: 0;
+    overflow: hidden;
+    background-color: #FFF5E9;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transition: height 0.3s ease;
+    & nav ul {
+        list-style: none;
+        text-align: center;
+        padding: 0;
+        & li {
+            margin: 10px 0;
+        }
+        & p {
+            font-size: 1rem;
+            padding-top: 7rem;
+        }
+    }
+}
+.dropdown-menu nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 64px;
+    &:hover {
+        text-shadow: 0px 0px 14px #FF5C00;
+    } 
+}
+.burger-active {
+    & .line1 {
+        transform: rotate(45deg) translate(10px, 5px);;
+    }
+    & .line2 {
+        opacity: 0;
+    }
+    & .line3 {
+        transform: rotate(-45deg) translate(10px, -5px);;
+    }
+}
+.menu-open {
+    height: 100vw;
+    overflow: hidden;
+}
+.logo_menu {
+    height: 100px;
+}
+
+//background img
+
+.catsMenu {
+    & .Kawaneko {
+        position: absolute;
+        top: 7%;
+        left: 23%;
+    }
+    & .Jaakuna {
+        position: absolute;
+        top: 22%;
+        right: 15%; 
+    }
+    & .Orenjiiro {
+        position: absolute;
+        top: 33%;
+        left: 5%;
+    }
+}
+.flowersMenu {
+    & .orchid{
+        position: absolute;
+        top: 2%;
+        left: -4%;
+        width: 10em;
+    }
+    & .sunflower{
+        position: absolute;
+        top: 3%;
+        right: 20%;
+    }
+    & .randomFlower{
+        position: absolute;    
+        right: -3%;
+        top: 16%;
+        width: 6em;
+    }
+    & .flower{
+        position: absolute;
+        top: 23%;
+        left: 16%;
+        width: 5em;
+    }
+    & .hibiscus{
+        position: absolute;
+        right: -22%;
+        top: 27%;
+    }
+}
+body.no-scroll {
+    overflow: hidden;
+}

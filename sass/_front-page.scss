@@ -1,33 +1,18 @@
+.site-header {
+    background-color: $primaryColor;
+}
+
 .fade-in-section {
-    opacity: 0;
-    transform: translateY($translateY);
-    transition: opacity 1s ease-out, transform 1s ease-out; 
-    &.visible{
-        opacity: 1;
-        transform: translateY(0); 
-    } 
+    @include fade-in($translateY);
     &-down {
-        opacity: 0;
-        transform: translateY(-$translateY);
-        transition: opacity 1s ease-out, transform 1s ease-out; 
-        &.visible {
-            opacity: 1;
-            transform: translateY(0); 
-        }
+        @include fade-in(-$translateY);
     }
 }
-
-.fade-in-title{
+.fade-in-title {
+    @include fade-in($translateY);
     display: block;
-    opacity: 0;
-    transform: translateY($translateY);
-    transition: opacity 1s ease-out, transform 1s ease-out;
-    &.visible{
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
-
+// Section hero header
 .banner {
     position: relative;
     width: 100%;
@@ -42,31 +27,9 @@
     z-index: 2;
     position: absolute;
 }
-
-@keyframes floating{
-    0% {
-        transform:translate(0, 0);
-      }
-      20% {
-        transform:translate(30px, -10px);
-      }
-      40% {
-        transform:translate(20px, -30px);
-      }
-      60% {
-        transform:translate(-20px, -20px);
-      }
-      80% {
-        transform:translate(-30px, 10px);
-      }
-      100% {
-        transform:translate(0, 0);
-      }
-    }
 .floating{
     animation: floating 8s ease-in-out 0s infinite
 }
-    
 .video-background {
     height: auto;
     object-fit: cover;
@@ -77,7 +40,7 @@
         display: none;
       }
 }
-
+// Rotation fleurs
 .story h2::after,
 .story__article::after,
 #studio h2::before,
@@ -87,22 +50,37 @@
 .site-footer ul::after {
     @include rotate_infinite (var(--rotateTime)) ;
 }
-
+@each $flower in $flowers {
+    .#{$flower} {
+        @include rotate_infinite(var(--rotateTime));
+    }
+}
+// Section le lieu
 #place {
     background-image: url(../assets/images/Studio_Koukaki-image_place.png) !important;
     & div {
         justify-content: end !important;
     }
 }
-.big_cloud{
-    position: relative;
-    left: 165%;
-    bottom: 65%;
-    filter: blur(11px);
+.big_cloud {
+    @include cloud(relative, 165%, 65%, $cloud-blur-big);
 }
 .little_cloud {
-    position: relative;
-    bottom: 55%;
-    left: 125%;
-    filter: blur(6px);
+    @include cloud(relative, 125%, 55%, $cloud-blur-little);
+}
+// Section les personnages
+#characters {
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
+    & div{
+        flex: none !important;
+    }
+    & h3 {
+        text-align: left;
+        background-position: 1em;
+    }
+}  
+.swiper{
+    max-width: 85%;  
 }
