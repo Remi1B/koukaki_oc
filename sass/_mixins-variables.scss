@@ -1,11 +1,17 @@
 :root{
     --rotateTime: 20s;
 }
-$translateY: 100px;
+$translateY: 200px;
 $flowers: "orchid", "sunflower", "randomFlower", "hibiscus", "flower";
 $primaryColor: #FFD5A2;
 $cloud-blur-big: 11px;
 $cloud-blur-little: 6px;
+//Breakpoints
+$mobile: 576px;
+$littleTablette: 768px;
+$tablette: 992px;
+$laptop: 1200px;
+$fullScreen: 1440px;
 
 @keyframes rotating {
     from {
@@ -52,9 +58,9 @@ $cloud-blur-little: 6px;
       }
     }
 
-    @mixin cloud($position: relative, $left: 0%, $bottom: 0%, $blur: 0px) {
+    @mixin cloud($position: relative, $right: 0%, $bottom: 0%, $blur: 0px) {
         position: $position;
-        left: $left;
+        right: $right;
         bottom: $bottom;
         filter: blur($blur);
     }

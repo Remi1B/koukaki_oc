@@ -28,9 +28,9 @@
     }
 }
 .dropdown-menu {
-    position: relative;
+    position: fixed;
     left: 0;
-    width: auto;
+    width: 100%;
     height: 0;
     overflow: hidden;
     background-color: #FFF5E9;
@@ -42,12 +42,16 @@
         list-style: none;
         text-align: center;
         padding: 0;
+        margin: 0;
         & li {
             margin: 10px 0;
         }
         & p {
             font-size: 1rem;
             padding-top: 7rem;
+            @media (max-width : $laptop) {
+                padding: 0;
+            }
         }
     }
 }
@@ -55,6 +59,14 @@
     color: black;
     text-decoration: none;
     font-size: 64px;
+    position: relative;
+    z-index: 1;
+    @media (min-width: $littleTablette) and (max-width: $tablette){
+        font-size: 50px;
+      }
+    @media (max-width: $littleTablette) {
+        font-size: 40px;
+      }
     &:hover {
         text-shadow: 0px 0px 14px #FF5C00;
     } 
@@ -71,7 +83,7 @@
     }
 }
 .menu-open {
-    height: 100vw;
+    height: 100%;
     overflow: hidden;
 }
 .logo_menu {
@@ -81,52 +93,80 @@
 //background img
 
 .catsMenu {
+    @media (max-width : $littleTablette) {
+        display: none;
+    }
     & .Kawaneko {
         position: absolute;
-        top: 7%;
-        left: 23%;
+        top: 15%;
+        left: 13%;
     }
     & .Jaakuna {
         position: absolute;
-        top: 22%;
+        top: 40%;
         right: 15%; 
     }
     & .Orenjiiro {
         position: absolute;
-        top: 33%;
+        bottom: 12%;
         left: 5%;
     }
 }
 .flowersMenu {
+    @media (max-width : $littleTablette) {
+        display: none;
+    }
     & .orchid{
         position: absolute;
-        top: 2%;
-        left: -4%;
+        top: 7%;
+        left: -2%;
         width: 10em;
+        @media (min-width: $littleTablette) and (max-width : $tablette) {
+            width: 8em;
+        }
     }
     & .sunflower{
         position: absolute;
-        top: 3%;
-        right: 20%;
+        top: 8%;
+        right: 16%;
+        @media (min-width: $littleTablette) and (max-width : $tablette) {
+            position: absolute;
+            top: 4%;
+            right: 10%;
+            width: 15%;
+        }
     }
-    & .randomFlower{
+    & .randomFlower {
         position: absolute;    
-        right: -3%;
-        top: 16%;
+        right: 0%;
+        top: 32%;
         width: 6em;
+        @media (min-width: $littleTablette) and (max-width : $tablette) {
+        width: 3em;
+        }
     }
     & .flower{
         position: absolute;
-        top: 23%;
         left: 16%;
+        bottom: 47%;
         width: 5em;
+        @media (min-width: $littleTablette) and (max-width : $tablette) {
+            width: 3em;
+        }
     }
     & .hibiscus{
         position: absolute;
         right: -22%;
-        top: 27%;
+        bottom: -35%;
+        @media (min-width: $littleTablette) and (max-width : $tablette) {
+            position: absolute;
+            right: -22%;
+            bottom: -16%;
+            width: 50%;
+        }
     }
 }
+
 body.no-scroll {
     overflow: hidden;
 }

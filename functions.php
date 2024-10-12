@@ -13,6 +13,7 @@ function theme_enqueue_styles() {
     wp_enqueue_script('parallaxeLogo', get_stylesheet_directory_uri() . '/js/parallaxeLogo.js', array(), null, true);
     wp_enqueue_script('fadeInSection', get_stylesheet_directory_uri() . '/js/fadeInSection.js', array(), null, true);
     wp_enqueue_script('fadeInTitle', get_stylesheet_directory_uri() . '/js/fadeInTitle.js', array(), null, true);
+    wp_enqueue_script('removeControl', get_stylesheet_directory_uri() . '/js/removeControl.js', array(), null, true);
     wp_enqueue_script('parallaxeCloud', get_stylesheet_directory_uri() . '/js/parallaxeCloud.js', array(), null, true);
     wp_enqueue_script('swiperCarrousel', get_stylesheet_directory_uri() . '/js/swiperCarrousel.js', array('swiper-js'), null, true);
 }

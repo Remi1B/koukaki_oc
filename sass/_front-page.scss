@@ -1,7 +1,6 @@
 .site-header {
     background-color: $primaryColor;
 }
-
 .fade-in-section {
     @include fade-in($translateY);
     &-down {
@@ -9,8 +8,8 @@
     }
 }
 .fade-in-title {
-    @include fade-in($translateY);
     display: block;
+    @include fade-in($translateY);
 }
 // Section hero header
 .banner {
@@ -18,6 +17,9 @@
     width: 100%;
     height: auto;
     overflow: hidden;
+    @media (max-width: $littleTablette) {
+        min-height: 300px;
+      }
 }
 .logo  {
     width: 100%;
@@ -26,6 +28,11 @@
     justify-content: center;
     z-index: 2;
     position: absolute;
+    & img {
+        @media (max-width: $littleTablette) {
+            transform: none !important;
+          }
+    }
 }
 .floating{
     animation: floating 8s ease-in-out 0s infinite
@@ -36,9 +43,10 @@
     display: block;
     position: relative;
     z-index: 1;
-    @media (max-width: 768px) {
+    min-height: 806px;
+    @media (max-width: $littleTablette) {
         display: none;
-      }
+    }
 }
 // Rotation fleurs
 .story h2::after,
@@ -58,15 +66,38 @@
 // Section le lieu
 #place {
     background-image: url(../assets/images/Studio_Koukaki-image_place.png) !important;
-    & div {
-        justify-content: end !important;
+    position: relative;
+    @media (max-width: $mobile) {
+        background-image:url("../../foce/assets/images/place_bg.png") !important;
+      }
+    & > div {
+        @media (max-width: $mobile) {
+            margin-bottom: 0;
+        }
+        & h3 {
+            @media (min-width: $littleTablette) and (max-width : $laptop) {
+                margin-top: 100px;
+            }
+        }
     }
+    & p {
+        @media (max-width: $mobile) {
+            padding: 0 !important;
+        }
+    }  
 }
 .big_cloud {
-    @include cloud(relative, 165%, 65%, $cloud-blur-big);
+    @include cloud(absolute, 5%, 72%, $cloud-blur-big);
+    @media (max-width: $littleTablette) {
+        display: none;
+      }
 }
 .little_cloud {
-    @include cloud(relative, 125%, 55%, $cloud-blur-little);
+    @include cloud(absolute, 35%, 56%, $cloud-blur-little);
+    @media (max-width : $littleTablette) {
+        display: none;
+    }
+
 }
 // Section les personnages
 #characters {
@@ -83,4 +114,31 @@
 }  
 .swiper{
     max-width: 85%;  
+}
+
+// Media queries spécifiques
+@media (max-width : $littleTablette) {
+    *, *::before, *::after { 
+        animation: none !important;
+    }
+    span {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: $mobile) {
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    .site-footer {
+        padding-top: 0;
+        & ul::after {
+            content: "";
+        }
+    }
 }

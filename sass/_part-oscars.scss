@@ -2,10 +2,18 @@
     display: flex;
     overflow: hidden; 
     position: relative;
+    min-height: 500px;
+    @media (max-width: $mobile) {
+        min-height: auto;
+        padding-bottom: 50px;
+    }
     &::before{
         content: url("../../foce/assets/images/Sunflower.png");
         position: absolute;
         left: 4.8em;
+        @media (max-width: $littleTablette) {
+            left: 0;
+        }
     }    
     &::after{
         content: url("../../foce/assets/images/orchid.png");
@@ -18,18 +26,30 @@
 .oscars{
     display: flex;
     align-items: center;
-    margin: 0 auto;
+    margin: auto;
+    @media (max-width : $littleTablette) {
+        flex-direction: column;
+    }
     & h3{
         background-image: url("../assets/images/orange_oscars_bg.png");
         margin-top: 2em;
         padding: 2em;
-        text-align: left;   
+        text-align: left;
+        @media (max-width: $tablette) {
+            font-size: 2rem;
+        }
+        @media (max-width: $mobile) {
+            font-size: 1rem;
+        }   
     } 
 }
 
 #event::before,
 #event::after {
     @include rotate_infinite (var(--rotateTime)) ;
+    @media (max-width: $mobile) {
+        display: none;
+    }
 }
 
 // fleurs du footer invisibles

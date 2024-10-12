@@ -5,7 +5,6 @@ burgerMenu.addEventListener('click', () => {
     burgerMenu.classList.toggle('burger-active');
     dropdownMenu.classList.toggle('menu-open');
     body.classList.toggle('no-scroll');
-    window.scrollTo(0, 0);
 });
 const menuLinks = dropdownMenu.querySelectorAll('nav ul li a');
 menuLinks.forEach(link => {

@@ -34,11 +34,23 @@
   display: flex;
   overflow: hidden;
   position: relative;
+  min-height: 500px;
+}
+@media (max-width: 576px) {
+  #event {
+    min-height: auto;
+    padding-bottom: 50px;
+  }
 }
 #event::before {
   content: url("../../foce/assets/images/Sunflower.png");
   position: absolute;
   left: 4.8em;
+}
+@media (max-width: 768px) {
+  #event::before {
+    left: 0;
+  }
 }
 #event::after {
   content: url("../../foce/assets/images/orchid.png");
@@ -49,7 +61,12 @@
 .oscars {
   display: flex;
   align-items: center;
-  margin: 0 auto;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .oscars {
+    flex-direction: column;
+  }
 }
 .oscars h3 {
   background-image: url("../assets/images/orange_oscars_bg.png");
@@ -57,10 +74,26 @@
   padding: 2em;
   text-align: left;
 }
+@media (max-width: 992px) {
+  .oscars h3 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .oscars h3 {
+    font-size: 1rem;
+  }
+}
 
 #event::before,
 #event::after {
   animation: rotating var(--rotateTime) linear infinite;
+}
+@media (max-width: 576px) {
+  #event::before,
+  #event::after {
+    display: none;
+  }
 }
 
 .site-footer::before,
@@ -74,7 +107,7 @@
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(100px);
+  transform: translateY(200px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .fade-in-section.visible {
@@ -83,7 +116,7 @@
 }
 .fade-in-section-down {
   opacity: 0;
-  transform: translateY(-100px);
+  transform: translateY(-200px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .fade-in-section-down.visible {
@@ -92,10 +125,10 @@
 }
 
 .fade-in-title {
-  opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
   display: block;
+  opacity: 0;
+  transform: translateY(200px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .fade-in-title.visible {
   opacity: 1;
@@ -108,6 +141,11 @@
   height: auto;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .banner {
+    min-height: 300px;
+  }
+}
 
 .logo {
   width: 100%;
@@ -116,6 +154,11 @@
   justify-content: center;
   z-index: 2;
   position: absolute;
+}
+@media (max-width: 768px) {
+  .logo img {
+    transform: none !important;
+  }
 }
 
 .floating {
@@ -128,6 +171,7 @@
   display: block;
   position: relative;
   z-index: 1;
+  min-height: 806px;
 }
 @media (max-width: 768px) {
   .video-background {
@@ -167,23 +211,51 @@
 
 #place {
   background-image: url(../assets/images/Studio_Koukaki-image_place.png) !important;
+  position: relative;
 }
-#place div {
-  justify-content: end !important;
+@media (max-width: 576px) {
+  #place {
+    background-image: url("../../foce/assets/images/place_bg.png") !important;
+  }
+}
+@media (max-width: 576px) {
+  #place > div {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  #place > div h3 {
+    margin-top: 100px;
+  }
+}
+@media (max-width: 576px) {
+  #place p {
+    padding: 0 !important;
+  }
 }
 
 .big_cloud {
-  position: relative;
-  left: 165%;
-  bottom: 65%;
+  position: absolute;
+  right: 5%;
+  bottom: 72%;
   filter: blur(11px);
+}
+@media (max-width: 768px) {
+  .big_cloud {
+    display: none;
+  }
 }
 
 .little_cloud {
-  position: relative;
-  left: 125%;
-  bottom: 55%;
+  position: absolute;
+  right: 35%;
+  bottom: 56%;
   filter: blur(6px);
+}
+@media (max-width: 768px) {
+  .little_cloud {
+    display: none;
+  }
 }
 
 #characters {
@@ -203,6 +275,30 @@
   max-width: 85%;
 }
 
+@media (max-width: 768px) {
+  *, *::before, *::after {
+    animation: none !important;
+  }
+  span {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@media (max-width: 576px) {
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .site-footer {
+    padding-top: 0;
+  }
+  .site-footer ul::after {
+    content: "";
+  }
+}
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -235,9 +331,9 @@
 }
 
 .dropdown-menu {
-  position: relative;
+  position: fixed;
   left: 0;
-  width: auto;
+  width: 100%;
   height: 0;
   overflow: hidden;
   background-color: #FFF5E9;
@@ -250,6 +346,7 @@
   list-style: none;
   text-align: center;
   padding: 0;
+  margin: 0;
 }
 .dropdown-menu nav ul li {
   margin: 10px 0;
@@ -258,11 +355,28 @@
   font-size: 1rem;
   padding-top: 7rem;
 }
+@media (max-width: 1200px) {
+  .dropdown-menu nav ul p {
+    padding: 0;
+  }
+}
 
 .dropdown-menu nav ul li a {
   color: black;
   text-decoration: none;
   font-size: 64px;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .dropdown-menu nav ul li a {
+    font-size: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .dropdown-menu nav ul li a {
+    font-size: 40px;
+  }
 }
 .dropdown-menu nav ul li a:hover {
   text-shadow: 0px 0px 14px #FF5C00;
@@ -279,7 +393,7 @@
 }
 
 .menu-open {
-  height: 100vw;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -287,49 +401,90 @@
   height: 100px;
 }
 
+@media (max-width: 768px) {
+  .catsMenu {
+    display: none;
+  }
+}
 .catsMenu .Kawaneko {
   position: absolute;
-  top: 7%;
-  left: 23%;
+  top: 15%;
+  left: 13%;
 }
 .catsMenu .Jaakuna {
   position: absolute;
-  top: 22%;
+  top: 40%;
   right: 15%;
 }
 .catsMenu .Orenjiiro {
   position: absolute;
-  top: 33%;
+  bottom: 12%;
   left: 5%;
 }
 
+@media (max-width: 768px) {
+  .flowersMenu {
+    display: none;
+  }
+}
 .flowersMenu .orchid {
   position: absolute;
-  top: 2%;
-  left: -4%;
+  top: 7%;
+  left: -2%;
   width: 10em;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .flowersMenu .orchid {
+    width: 8em;
+  }
 }
 .flowersMenu .sunflower {
   position: absolute;
-  top: 3%;
-  right: 20%;
+  top: 8%;
+  right: 16%;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .flowersMenu .sunflower {
+    position: absolute;
+    top: 4%;
+    right: 10%;
+    width: 15%;
+  }
 }
 .flowersMenu .randomFlower {
   position: absolute;
-  right: -3%;
-  top: 16%;
+  right: 0%;
+  top: 32%;
   width: 6em;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .flowersMenu .randomFlower {
+    width: 3em;
+  }
 }
 .flowersMenu .flower {
   position: absolute;
-  top: 23%;
   left: 16%;
+  bottom: 47%;
   width: 5em;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .flowersMenu .flower {
+    width: 3em;
+  }
 }
 .flowersMenu .hibiscus {
   position: absolute;
   right: -22%;
-  top: 27%;
+  bottom: -35%;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .flowersMenu .hibiscus {
+    position: absolute;
+    right: -22%;
+    bottom: -16%;
+    width: 50%;
+  }
 }
 
 body.no-scroll {
